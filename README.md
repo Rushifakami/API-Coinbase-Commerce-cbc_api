@@ -31,3 +31,4 @@ from cbc_api import cbc_api
 cb = cbc_api.CBCApi("YOUR_COINBASE_COMMERCE_API_TOKEN")
 
 Ознакомится с примерами использования вы можете в файле examples.py
+# API-Coinbase-Commerce-cbc_api-cleaned
