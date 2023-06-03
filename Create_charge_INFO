@@ -1,0 +1,28 @@
+For a detailed description for the possible values of each parameter of Create a Charge endpoint, we have enumerated our responses below.
+
+  “name” [Optional]
+  For the***“name”*** parameter, you can indicate the name of the charge that you want to create.
+  Example request: "name":"Human Fund"
+    “description” [Optional]
+
+For the “description” parameter, you can indicate the description of the charge you want to create.
+Example request: "description":"Money for People"
+        “pricing_type” [Required]
+
+The pricing type parameter indicates what type of charge you want to create. We have two types of values for the pricing_type object.
+
+  no_price
+
+This pricing type lets the receiver initiate the amount they want to pay in cryptocurrency.
+Example request: "pricing_type":"no_price"
+
+  fixed_price
+
+This pricing type lets you indicate the amount of cryptocurrency you want to receive from your customer.
+Example request: "pricing_type":"fixed_price"
+
+  “local_price” [Required]
+
+"Примечание: Текст, представленный в файле create_charge_INFO, является цитатой из стороннего источника (https://forums.coinbasecloud.dev/t/looking-for-field-descriptions-in-api-reference-guide/2570/2), автором которого является bazinga. Этот текст используется только в информационных целях и не принадлежит автору этого репозитория."
+
+"Note: The text provided in the create_charge_INFO file is a quote from a third party source (https://forums.coinbasecloud.dev/t/looking-for-field-descriptions-in-api-reference-guide/2570/2), by the author which is bazinga. This text is for informational purposes only and does not belong to the author of this repository."
