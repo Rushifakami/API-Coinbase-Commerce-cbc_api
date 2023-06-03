@@ -4,8 +4,8 @@ Unofficial Coinbase Commerce library for Python.
 I wanna create library for Coinbase Commerce API on python. All libraries that i ever saw not actual today. So, i decided to create it for me and for for interested persons. Also, it's my first step in my IT path.
 
 Setup:
-.. image:: https://img.shields.io/pypi/v/coinbase-commerce-API
-   :alt: PyPI
+
+PyPI: https://pypi.org/project/coinbase-commerce-API/
 
 Simple download from repository or using pip:
 pip install coinbase-commerce-API
