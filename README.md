@@ -5,6 +5,9 @@ I wanna create library for Coinbase Commerce API on python. All libraries that i
 
 Setup:
 
+.. image:: https://img.shields.io/pypi/dd/coinbase-commerce-API
+   :alt: PyPI - Downloads
+
 Simple download from repository or using pip:
 pip install coinbase-commerce-API
 
