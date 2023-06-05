@@ -15,6 +15,8 @@ from cbc_api import cbc_api
 
 cb = cbc_api.CBCApi("YOUR_COINBASE_COMMERCE_API_TOKEN")
 
+Information about the functionality of the library is available in the Wiki section.
+
 You can get acquainted with examples of use in the file examples.py
 
 #RU
@@ -32,4 +34,7 @@ from cbc_api import cbc_api
 
 cb = cbc_api.CBCApi("YOUR_COINBASE_COMMERCE_API_TOKEN")
 
-Ознакомится с примерами использования вы можете в файле examples.py
+Информация о функционале библиотеки доступна в разделе Wiki.
+
+Ознакомится с примерами использования вы можете в файле examples.py. 
+
