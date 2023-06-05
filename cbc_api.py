@@ -37,7 +37,7 @@ class CBCApi:
         return response
 
     def charge_resolve(self, charge_code):
-        response = requests.get(f'https://api.commerce.coinbase.com/charges/{charge_code}/resolve', headers=self.headers).json()
+        response = requests.post(f'https://api.commerce.coinbase.com/charges/{charge_code}/resolve', headers=self.headers).json()
         return response
 
     def checkouts_list(self):
