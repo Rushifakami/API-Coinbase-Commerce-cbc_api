@@ -19,3 +19,59 @@ payment_url = charge['data']['hosted_url']
 print(payment_url)
 
 #You will get something like: https://commerce.coinbase.com/charges/BX2BDFG3
+
+
+###########################################################################################################################################
+#AIOGRAM + CBC_API EXAMPLE
+
+import logging
+from aiogram import Bot, Dispatcher, executor, types
+from aiogram.contrib.fsm_storage.memory import MemoryStorage
+from cbc_api import cbc_api
+
+logging.basicConfig(level=logging.INFO)
+
+# CoinBase Commerce
+cb = cbc_api.CBCApi("YOUR_COINBASE_COMMERCE_API_KEY")
+
+bot = Bot('YOUR_BOT_TOKEN')
+
+storage = MemoryStorage()
+
+dp = Dispatcher(bot, storage=storage)
+
+
+# Buttons
+def buttons(var):
+    # Create a reply keyboard markup with a button
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    if var == 1:
+        btn1 = '👛 Donate'
+        markup.add(btn1)
+    return markup
+
+
+# Start command
+@dp.message_handler(commands=['start'])
+async def start(message: types.Message):
+    # Send a greeting message and display the button
+    await bot.send_message(message.chat.id, "Hello!", reply_markup=buttons(1))
+
+
+# Text handler
+@dp.message_handler(content_types=['text'])
+async def text(message: types.Message):
+    if message.text == '👛 Donate':
+        # Create a charge using CoinBase Commerce API
+        async def charge():
+            donate = cb.create_charge('Donate me', currency='EUR')
+            url = donate['data']
+            return url
+
+        # Await the charge function to get the donation URL
+        url = await charge()
+        await bot.send_message(message.chat.id, f'Donate URL: {url}')
+
+
+if __name__ == '__main__':
+    executor.start_polling(dp, skip_updates=True)
