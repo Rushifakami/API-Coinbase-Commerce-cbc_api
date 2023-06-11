@@ -14,7 +14,7 @@ class CBCApi:
         response = requests.get('https://api.commerce.coinbase.com/charges', headers=self.headers).json()
         return response
 
-    def create_charge(self, name, description=None, pricing_type='no_price', amount=None, currency='USD'):
+    def create_charge(self, name, description=None, pricing_type='no_price', amount=None, currency='USD', customer_id=None, customer_name=None):
         data = {'name': name, 'pricing_type': pricing_type}
         if description is not None:
             data['description'] = {'description': description}
@@ -25,6 +25,10 @@ class CBCApi:
                 'amount': str(amount),
                 'currency': currency
             }
+        if customer_id is not None:
+            data['metadata'] = {'customer_id': customer_id}
+        if customer_name is not None:
+            data['metadata'] = {'customer_name': customer_name}
         response = requests.post('https://api.commerce.coinbase.com/charges', headers=self.headers, json=data).json()
         return response
 
