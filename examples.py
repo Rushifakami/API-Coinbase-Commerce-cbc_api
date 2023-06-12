@@ -1,7 +1,7 @@
-from cbc_api import cbc_api
+from cbc_api.cbc_api import CBCApi
 
 #Create object with your api_key
-cb = cbc_api.CBCApi("YOUR_COINBASE_COMMERCE_API_KEY")
+cb = CBCApi("YOUR_COINBASE_COMMERCE_API_KEY")
 
 #Create charge using fixed_price
 #Parametr "description" optional. There is two parameters for pricing_type it's: 'no_price' and 'fixed_price'. 'no_price' is using to create charge with no specific order amount. Great for donation. 'fixed_price' allows you to specify a static order amount. 'amount' this is directly the amount of the order, used only with fixed_price.
