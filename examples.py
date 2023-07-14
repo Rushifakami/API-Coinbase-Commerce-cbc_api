@@ -27,12 +27,12 @@ print(payment_url)
 import logging
 from aiogram import Bot, Dispatcher, executor, types
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
-from cbc_api import cbc_api
+from cbc_api.cbc_api import CBCApi
 
 logging.basicConfig(level=logging.INFO)
 
 # CoinBase Commerce
-cb = cbc_api.CBCApi("YOUR_COINBASE_COMMERCE_API_KEY")
+cb = CBCApi("YOUR_COINBASE_COMMERCE_API_KEY")
 
 bot = Bot('YOUR_BOT_TOKEN')
 
