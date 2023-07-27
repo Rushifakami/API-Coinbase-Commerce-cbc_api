@@ -65,7 +65,7 @@ async def text(message: types.Message):
         # Create a charge using CoinBase Commerce API
         async def charge():
             donate = cb.create_charge('Donate me', currency='EUR')
-            url = donate['data']
+            url = donate['data']['hosted_url']
             return url
 
         # Await the charge function to get the donation URL
